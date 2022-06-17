@@ -4,7 +4,7 @@
 
 Submitted by: Christina Wang
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: 12 hours spent in total
 
 Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
