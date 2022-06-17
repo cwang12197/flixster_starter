@@ -1,11 +1,12 @@
 const API_KEY = "api_key=0c34e535f3fa44f19963cddee5cf2d8d";
 const API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&" + API_KEY;
-const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
+const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?${API_KEY}&query=`;
 
 let page = 1;
 var searchTerm = "";
 
 const searchBarEl = document.querySelector("#search-input");
+const searchInput = document.querySelector("#search");
 const moviesGrid = document.querySelector("#movies-grid");
 const loadButton = document.querySelector("#load-more-movies-btn");
 const movieCardElements = document.querySelector(".movie-card");
@@ -65,8 +66,8 @@ searchBarEl.addEventListener('submit', event => {
 
     moviesGrid.innerHTML = "";
     page = 1;
-    searchTerm = event.target.value;
-    console.log(searchTerm); //problem: down here it does not take in searchterm
+    searchTerm = searchInput.value;
+    console.log(searchTerm); 
     getMovies(searchTerm, page);
 })
 
@@ -74,7 +75,6 @@ loadMoreMovies.addEventListener('click', event => {
     getMovies(searchTerm, page++);
 })
 
-//TODO: fix search, do load more button
 
 closeButton.addEventListener("submit", event => {
     loadMoreMovies.classList.add("hidden");
