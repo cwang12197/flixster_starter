@@ -5,16 +5,17 @@
 .title {
     font-size: 100px;
     text-align: center;
-    background-color: #588157;
+    background-color: #18191A;
     margin: 0px;
     font-family: 'Niconne', cursive;
     font-weight: bold;
     box-shadow: 0 8px 10px black;
     letter-spacing: 2px;
+    color: red;
 }
 
 body {
-    background-color: dad7cd;
+    background-color: ;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -22,7 +23,7 @@ body {
    padding: 10px;
    display: flex;
    justify-content: center;
-   background-color: #588157;
+   background-color: #18191A;
 }
 
 .hidden {
@@ -40,14 +41,15 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: #18191A;
 }
 
 .movie-card {
     width: 200px;
     height: 400px;
     margin: 20px;
-    background-color: #588157;
-    box-shadow: 0 4px 5px #344e41;
+    background-color: #18191A;
+    box-shadow: 0 4px 5px #18191A;
     position: relative;
     overflow: hidden;
     border-radius: 3px;
@@ -99,8 +101,8 @@ h2 {
 }
 
 .overview {
-    background-color: #dad7cd;
-    color: #588157;
+    background-color: #18191A;
+    color: red;
     font-size: 12px;
     padding: 15px;
     position: absolute;

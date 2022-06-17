@@ -1,31 +1,32 @@
 const API_KEY = "api_key=0c34e535f3fa44f19963cddee5cf2d8d";
 const API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&" + API_KEY;
 const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?${API_KEY}&query=`;
-
+const YT_LINK = "https://www.youtube.com/embed/";
 let page = 1;
 var searchTerm = "";
 
 const searchBarEl = document.querySelector("#search-input");
 const searchInput = document.querySelector("#search");
 const moviesGrid = document.querySelector("#movies-grid");
+const moviePoster = document.querySelector(".movie-poster");
 const loadButton = document.querySelector("#load-more-movies-btn");
 const movieCardElements = document.querySelector(".movie-card");
 const loadMoreMovies = document.querySelector("#load-more-movies-btn");
 const closeButton = document.querySelector("#close-button");
+const modalContainer = document.querySelector(".modal-container");
+const closeModal = document.querySelector(".close-modal")
 
-
-
-
-async function populateInitial() {
-    const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?${API_KEY}&language=en-US&page=1`);
-    const result = await response.json();
+async function loadInitial() {
+    let response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?${API_KEY}&language=en-US&page=1`);
+    let result = await response.json();
     displayMovies(result);
 }
+console.log(API_URL);
 
 async function getMovies(search, page) {
     
-    const response = await fetch(`${SEARCH_URL}${search}&page=${page}&include_adult=false`);
-    const results = await response.json();
+    let response = await fetch(`${SEARCH_URL}${search}&page=${page}&include_adult=false`);
+    let results = await response.json();
     
     displayMovies(results);
 }
@@ -57,7 +58,7 @@ function displayMovies(data) {
 
 window.onload = function () {
     moviesGrid.innerHTML = "";
-    populateInitial();
+    loadInitial();
 }
 
 searchBarEl.addEventListener('submit', event => {
@@ -83,4 +84,18 @@ closeButton.addEventListener("click", event => {
     window.location.reload();
 })
 
-//TODO: load more clears the page
+function getModal() {
+    return `
+        <div class="modal-card show">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/${key}"></iframe>
+            <button id="close-modal">Close</button>
+        </div>    
+        `
+}
+
+function checkClick() {
+    // modalContainer.classList.remove("hidden");
+    // closeModal.classList.remove("hidden");
+    console.log("check click");
+}
+
