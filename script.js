@@ -47,7 +47,7 @@ function displayMovies(data) {
             <img class = "movie-poster" src = "https://image.tmdb.org/t/p/w500/${result.poster_path}" alt = "${result.title}" />
             <div class="movie-info">
             <h3>${result.title}</h3>
-            <span class = ${color}>${result.vote_average}<span>
+            <span class = ${color}>${result.vote_average}⭐<span>
             </div>
             <div class = "overview"> ${result.overview}</div>
             </div>
