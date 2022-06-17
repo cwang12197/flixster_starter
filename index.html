@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flixster Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Niconne&family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+<body>
+  <h1 class="title">Flixster</h1>
+  <div class="top-container">
+    <span class="navbar-container">
+      <form id="search-input">
+        <input type="text" placeholder="Search..." id="search">
+        <button type="button" class = "hidden" id="close-button">Clear Search</button>
+      </form>
+    </span>
+  </div>
+  <div id="movies-grid">
+    <div class="movie-card">
+      <img class="movie-poster" alt="" />
+      <div class="movie-info">
+        <h3>title</h3>
+        <span class = "green" </span>9.7</span>
+      </div>
+      <div class="overview"></div>
+    </div>
+  </div>
+
+  <button id="load-more-movies-btn" class="hidden">Load More Movies</button>
+  <script src="script.js"></script>
+</body>
+
+</html>

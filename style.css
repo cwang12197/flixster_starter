@@ -1,1 +1,118 @@
 
+*{
+    box-sizing: border-box;
+}
+.title {
+    font-size: 100px;
+    text-align: center;
+    background-color: #588157;
+    margin: 0px;
+    font-family: 'Niconne', cursive;
+    font-weight: bold;
+    box-shadow: 0 8px 10px black;
+    letter-spacing: 2px;
+}
+
+body {
+    background-color: dad7cd;
+    font-family: 'Poppins', sans-serif;
+}
+
+.top-container {
+   padding: 10px;
+   display: flex;
+   justify-content: center;
+   background-color: #588157;
+}
+
+.hidden {
+    display: none;
+}
+
+#search {
+    border: 2px solid #dad7cd;
+    border-radius: 70px;
+    font-size: 15px;
+    padding: 10px;
+}
+
+#movies-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie-card {
+    width: 200px;
+    height: 100%;
+    margin: 20px;
+    background-color: #588157;
+    box-shadow: 0 4px 5px #344e41;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+}
+.movie-poster {
+    width: 100%;
+    height: auto;
+}
+
+.movie-info {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    letter-spacing: 1px;
+}
+
+.movie-info.span{
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: white;
+    padding: 5px;
+}
+
+.movie-info span.green {
+    color: lightgreen;
+}
+
+.movie-info span.yellow {
+    color: yellow;
+}
+
+.movie-info span.red {
+    color: red;
+}
+
+h2 {
+    text-align: center;
+}
+
+.overview {
+    background-color: #dad7cd;
+    color: #588157;
+    font-size: 15px;
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    transform: translateY(101%);  /*hide overview until hovered */
+    transition: transform 0.3s ease; /*show up in transition */
+}
+
+.movie-card:hover .overview {
+    transform: translateY(0); /*undo the translate so it pops up */
+}
+
+button {
+    border: 2px solid #dad7cd;
+    border-radius: 40px;
+    font-size: 13px;
+    padding: 10px;
+}
+#load-more-movies-btn {
+    display: flex;
+    margin: auto;
+}
