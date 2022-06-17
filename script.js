@@ -3,7 +3,6 @@ const API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
 const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?${API_KEY}&query=`;
 
 let page = 1;
-const limit = 9;
 var searchTerm = "";
 
 const searchBarEl = document.querySelector("#search-input");
@@ -15,7 +14,7 @@ const loadMoreMovies = document.querySelector("#load-more-movies-btn");
 const closeButton = document.querySelector("#close-button");
 
 
-console.log(API_URL);
+
 
 async function populateInitial() {
     const response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?${API_KEY}&language=en-US&page=1`);
@@ -24,15 +23,15 @@ async function populateInitial() {
 }
 
 async function getMovies(search, page) {
-    console.log("search: ", search);
+    
     const response = await fetch(`${SEARCH_URL}${search}&page=${page}&include_adult=false`);
     const results = await response.json();
-    console.log(results.results);
+    
     displayMovies(results);
 }
 
 function displayMovies(data) {
-    moviesGrid.innerHTML = "";
+    console.log('data: ', data);
     const resultData = data.results;
     let color = "red";
 
@@ -57,6 +56,7 @@ function displayMovies(data) {
 }
 
 window.onload = function () {
+    moviesGrid.innerHTML = "";
     populateInitial();
 }
 
@@ -68,13 +68,14 @@ searchBarEl.addEventListener('submit', event => {
     moviesGrid.innerHTML = "";
     page = 1;
     searchTerm = searchInput.value;
-    console.log(searchTerm); 
+     
     getMovies(searchTerm, page);
 })
 
 loadMoreMovies.addEventListener('click', event => {
     page += 1;
-    moviesGrid.innerHTML += getMovies(searchTerm, page);
+    // moviesGrid.innerHTML += `${getMovies(searchTerm, page)}`;
+    getMovies(searchTerm, page)
 })
 
 
@@ -82,4 +83,4 @@ closeButton.addEventListener("click", event => {
     window.location.reload();
 })
 
-//TODO: load more clears the page, clear search is not working
+//TODO: load more clears the page
