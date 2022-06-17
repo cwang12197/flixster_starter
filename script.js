@@ -3,6 +3,7 @@ const API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
 const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?${API_KEY}&query=`;
 
 let page = 1;
+const limit = 9;
 var searchTerm = "";
 
 const searchBarEl = document.querySelector("#search-input");
@@ -72,15 +73,13 @@ searchBarEl.addEventListener('submit', event => {
 })
 
 loadMoreMovies.addEventListener('click', event => {
-    getMovies(searchTerm, page++);
+    page += 1;
+    moviesGrid.innerHTML += getMovies(searchTerm, page);
 })
 
 
-closeButton.addEventListener("submit", event => {
-    loadMoreMovies.classList.add("hidden");
-    closeButton.classList.add("hidden");
-    moviesGrid.innerHTML = "";
-    page = 1;
-    searchInput.value = "";
-    populateInitial();
+closeButton.addEventListener("click", event => {
+    window.location.reload();
 })
+
+//TODO: load more clears the page, clear search is not working
