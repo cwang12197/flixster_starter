@@ -1,5 +1,3 @@
-📝 `NOTE` Use this template to initialize the contents of a README.md file for your application. As you work on your assignment over the course of the week, update the required or stretch features lists to indicate which features you have completed by changing `[ ]` to `[x]`. (🚫 Remove this paragraph before submitting your assignment.)
-
 ## Week 1 Assignment: Flixster
 
 Submitted by: Christina Wang
@@ -61,14 +59,15 @@ If I had more time I would improve the css formatting to make it seem more profe
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
 Next time I would like to try the backflip animation that I've seen some of my other peers execute. 
 
 ### Open-source libraries used
 
 - Add any links to open-source libraries used in your project.
+N/A
 
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
 Should out to Yilika and Phineas for helping me debug my code!!
