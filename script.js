@@ -84,18 +84,6 @@ closeButton.addEventListener("click", event => {
     window.location.reload();
 })
 
-function getModal() {
-    return `
-        <div class="modal-card show">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/${key}"></iframe>
-            <button id="close-modal">Close</button>
-        </div>    
-        `
-}
 
-function checkClick() {
-    // modalContainer.classList.remove("hidden");
-    // closeModal.classList.remove("hidden");
-    console.log("check click");
-}
+
 
