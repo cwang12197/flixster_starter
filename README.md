@@ -38,7 +38,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 - [x] Allow user to view more details about a movie within a popup.
 - [x] Improve the user experience through CSS & animation.
 - [ ] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
-- [ ] Implement anything else that you can get done to improve the app functionality!
+- [x] Implement anything else that you can get done to improve the app functionality!
 
 ### Walkthrough Video
 
@@ -50,15 +50,16 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Definitely, going over DOM for Javascript and APIs was immensely useful to complete this project. The Giphy Party Lab where we experimented with the Giphy API was very helpful/ 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I had more time I would improve the css formatting to make it seem more professional as well as consider adding a navigation bar for people to view movies that are not only popular or trending etc. (taking advantage of the resources the API offers).
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
 Add your response here
+Next time I would like to try the backflip animation that I've seen some of my other peers execute. 
 
 ### Open-source libraries used
 
@@ -67,3 +68,4 @@ Add your response here
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Should out to Yilika and Phineas for helping me debug my code!!
