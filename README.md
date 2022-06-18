@@ -40,12 +40,8 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 ### Walkthrough Video
 
-<!-- copy and paste. Modify height and width if desired. -->
-<iframe class="embeddedObject shadow resizable" name="embedded_content" scrolling="no" frameborder="0" type="text/html" 
-        style="overflow:hidden;" src="https://www.screencast.com/users/christinawang7884247/folders/Capture/media/8c2e3a6e-a97f-4528-9363-dbc0ff9c16b7/embed" height="862" width="1374" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        
-        
-URL: https://www.screencast.com/t/C9zTY0UkH
+<iframe src="https://giphy.com/embed/SjDs1ZKlAbeAp9TwQM" width="480" height="288" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/SjDs1ZKlAbeAp9TwQM">via GIPHY</a></p>
+
 ### Reflection
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
