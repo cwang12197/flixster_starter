@@ -12,9 +12,10 @@ const moviePoster = document.querySelector(".movie-poster");
 const loadButton = document.querySelector("#load-more-movies-btn");
 const movieCardElements = document.querySelector(".movie-card");
 const loadMoreMovies = document.querySelector("#load-more-movies-btn");
-const closeButton = document.querySelector("#close-button");
-const modalContainer = document.querySelector(".modal-container");
-const closeModal = document.querySelector(".close-modal")
+const modal = document.querySelector(".modal");
+const modalContent = document.querySelector(".modal-content")
+const youtubeVideo = document.querySelector("#youtubeVideo")
+const modalRemove = document.querySelector(".modal")
 
 async function loadInitial() {
     let response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?${API_KEY}&language=en-US&page=1`);
@@ -44,8 +45,8 @@ function displayMovies(data) {
             color = "yellow";
         }
         moviesGrid.innerHTML +=
-            `<div class = "movie-card">
-            <img class = "movie-poster" src = "https://image.tmdb.org/t/p/w500/${result.poster_path}" alt = "${result.title}" />
+            `<div class = "movie-card" id = "movie-card-${result.id}">
+            <img class = "movie-poster" id = "movie-poster-${result.id}" src = "https://image.tmdb.org/t/p/w500/${result.poster_path}" alt = "${result.title}" />
             <div class="movie-info">
             <h3>${result.title}</h3>
             <span class = ${color}>${result.vote_average}⭐<span>
@@ -53,12 +54,21 @@ function displayMovies(data) {
             <div class = "overview"> ${result.overview}</div>
             </div>
     `
+        const movieCardEl = document.querySelector(`#movie-poster-${338953}`)
+        console.log(movieCardEl)
+    })
+    const movieList = document.querySelectorAll(".movie-poster");
+    movieList.forEach(movie => {
+        movie.addEventListener("click", (event) => {
+            getModal(event.target.id.split("-")[2])
+        })
     })
 }
 
 window.onload = function () {
     moviesGrid.innerHTML = "";
     loadInitial();
+    closeModal();
 }
 
 searchBarEl.addEventListener('submit', event => {
@@ -84,6 +94,28 @@ closeButton.addEventListener("click", event => {
     window.location.reload();
 })
 
+function getModal(movieId) {
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?${API_KEY}&language=en-US`).then((response) => {
+        if (!response.ok) throw new Error("respo not okay");
+        return response.json();
+    }).then((data) => {
+        const videos = data.results.filter((video) => {
+            return video.site == ("YouTube") && video.type == "Trailer";
+        })
+        if (videos.length == 0) {
+            return;
+        }
+        console.log(videos);
+        youtubeVideo.src = `${YT_LINK}${videos[0].key}`
+        modalRemove.classList.remove("hidden")
+    });
+}
 
-
+function closeModal() {
+    const closeButton = document.querySelector(".modal-content")
+    closeButton.addEventListener("click", event => {
+        modalRemove.classList.add("hidden")
+        console.log("text modal close")
+    })
+}
 
