@@ -32,8 +32,8 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 #### STRETCH FEATURES
 
-- [ ] Deploy website using GitHub Pages. 
-- [ ] Allow user to view more details about a movie within a popup.
+- [x] Deploy website using GitHub Pages. 
+- [x] Allow user to view more details about a movie within a popup.
 - [x] Improve the user experience through CSS & animation.
 - [x] Allow movie video trailers to be played using [embedded YouTube](https://support.google.com/youtube/answer/171780?hl=en)
 - [x] Implement anything else that you can get done to improve the app functionality!
