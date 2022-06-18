@@ -12,10 +12,10 @@ const moviePoster = document.querySelector(".movie-poster");
 const loadButton = document.querySelector("#load-more-movies-btn");
 const movieCardElements = document.querySelector(".movie-card");
 const loadMoreMovies = document.querySelector("#load-more-movies-btn");
-const modal = document.querySelector(".modal");
 const modalContent = document.querySelector(".modal-content")
 const youtubeVideo = document.querySelector("#youtubeVideo")
 const modalRemove = document.querySelector(".modal")
+const closeSearch = document.querySelector("#close-button")
 
 async function loadInitial() {
     let response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?${API_KEY}&language=en-US&page=1`);
@@ -74,7 +74,7 @@ window.onload = function () {
 searchBarEl.addEventListener('submit', event => {
     event.preventDefault();
     loadMoreMovies.classList.remove("hidden");
-    closeButton.classList.remove("hidden");
+    closeSearch.classList.remove("hidden");
 
     moviesGrid.innerHTML = "";
     page = 1;
@@ -90,7 +90,7 @@ loadMoreMovies.addEventListener('click', event => {
 })
 
 
-closeButton.addEventListener("click", event => {
+closeSearch.addEventListener("click", event => {
     window.location.reload();
 })
 
