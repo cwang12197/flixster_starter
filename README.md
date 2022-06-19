@@ -4,7 +4,7 @@ Submitted by: Christina Wang
 
 Estimated time spent: 12 hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
+Deployed Application (optional): [Flixster Deployed Site](https://cwang12197.github.io/flixster_starter/)
 
 ### Application Features
 
