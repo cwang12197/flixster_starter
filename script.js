@@ -3,7 +3,7 @@ const API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
 const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?${API_KEY}&query=`;
 const YT_LINK = "https://www.youtube.com/embed/";
 let page = 1;
-var searchTerm = "";
+var searchTerm = "~";
 
 const searchBarEl = document.querySelector("#search-input");
 const searchInput = document.querySelector("#search");
@@ -22,18 +22,27 @@ async function loadInitial() {
     let result = await response.json();
     displayMovies(result);
 }
-console.log(API_URL);
+
 
 async function getMovies(search, page) {
+    console.log("search", search);
     
-    let response = await fetch(`${SEARCH_URL}${search}&page=${page}&include_adult=false`);
-    let results = await response.json();
-    
-    displayMovies(results);
+    if (search === "~") {
+        let response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?${API_KEY}&language=en-US&page=${page}`);
+        let results = await response.json();
+        displayMovies(results);
+    }
+    else {
+        let response = await fetch(`${SEARCH_URL}${search}&page=${page}&include_adult=false`);
+        let results = await response.json();
+        displayMovies(results);
+    }
+
 }
 
 function displayMovies(data) {
-    console.log('data: ', data);
+    console.log('displayMovies: ', displayMovies);
+    
     const resultData = data.results;
     let color = "red";
 
@@ -55,7 +64,7 @@ function displayMovies(data) {
             </div>
     `
         const movieCardEl = document.querySelector(`#movie-poster-${338953}`)
-        console.log(movieCardEl)
+        
     })
     const movieList = document.querySelectorAll(".movie-poster");
     movieList.forEach(movie => {
@@ -86,7 +95,7 @@ searchBarEl.addEventListener('submit', event => {
 loadMoreMovies.addEventListener('click', event => {
     page += 1;
     // moviesGrid.innerHTML += `${getMovies(searchTerm, page)}`;
-    getMovies(searchTerm, page)
+        getMovies(searchTerm, page)
 })
 
 
@@ -105,7 +114,7 @@ function getModal(movieId) {
         if (videos.length == 0) {
             return;
         }
-        console.log(videos);
+        
         youtubeVideo.src = `${YT_LINK}${videos[0].key}`
         modalRemove.classList.remove("hidden")
     });
@@ -115,7 +124,7 @@ function closeModal() {
     const closeButton = document.querySelector(".modal-content")
     closeButton.addEventListener("click", event => {
         modalRemove.classList.add("hidden")
-        console.log("text modal close")
+        
     })
 }
 
