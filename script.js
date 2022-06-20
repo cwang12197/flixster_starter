@@ -3,7 +3,7 @@ const API_URL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
 const SEARCH_URL = `https://api.themoviedb.org/3/search/movie?${API_KEY}&query=`;
 const YT_LINK = "https://www.youtube.com/embed/";
 let page = 1;
-var searchTerm = "~";
+var searchTerm = "ʕ";
 
 const searchBarEl = document.querySelector("#search-input");
 const searchInput = document.querySelector("#search");
@@ -27,7 +27,7 @@ async function loadInitial() {
 async function getMovies(search, page) {
     console.log("search", search);
     
-    if (search === "~") {
+    if (search === "ʕ") {
         let response = await fetch(`https://api.themoviedb.org/3/movie/now_playing?${API_KEY}&language=en-US&page=${page}`);
         let results = await response.json();
         displayMovies(results);
