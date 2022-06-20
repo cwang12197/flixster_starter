@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&family=Niconne&family=Poppins:wght@200&display=swap');
 *{
     box-sizing: border-box;
 }
@@ -7,7 +7,7 @@
     text-align: center;
     background-color: #18191A;
     margin: 0px;
-    font-family: 'Niconne', cursive;
+    font-family: 'Alegreya Sans SC', arial;
     font-weight: bold;
     box-shadow: 0 8px 10px black;
     letter-spacing: 2px;
@@ -131,6 +131,8 @@ button {
 #load-more-movies-btn {
     display: flex;
     margin: auto;
+    font-family: "Alegreya Sans SC";
+    letter-spacing: 2px;
 }
 
 .modal {
